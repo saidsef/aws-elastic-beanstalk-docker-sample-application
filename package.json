@@ -1,0 +1,21 @@
+{
+  "name": "web-server",
+  "version": "0.1.0",
+  "description": "test web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Debug: no test specified\" && exit 0",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "test",
+    "nodejs",
+    "web",
+    "application"
+  ],
+  "author": "Said Sef <saidsef@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

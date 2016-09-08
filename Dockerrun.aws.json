@@ -1,0 +1,19 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [],
+  "containerDefinitions": [
+    {
+      "name": "node-sample-web-application",
+      "image": "saidsef/node-webserver:dev",
+      "environment": [
+        {
+          "name": "PORT",
+          "value": "8080"
+        }
+      ],
+      "essential": true,
+      "memory": 128,
+      "mountPoints": []
+    }
+  ]
+}
