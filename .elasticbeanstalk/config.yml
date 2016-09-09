@@ -3,4 +3,5 @@ packages:
     nginx: []
 
 commands:
-  ignoreErrors: true
+  kernal_tunning:
+    ignoreErrors: true
