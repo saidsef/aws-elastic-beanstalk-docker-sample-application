@@ -1,5 +1,7 @@
 FROM alpine:latest
 
+MAINTAINER Said Sef <saidsef@gmail.com>
+
 RUN mkdir -p /code
 RUN apk add --update curl nodejs
 RUN rm -rfv /var/cache/apk/*
