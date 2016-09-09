@@ -1,10 +1,14 @@
 FROM alpine:latest
 
+MAINTAINER Said Sef <saidsef@gmail.com>
+
 WORKDIR /code
 ENV HOME /tmp
 
+RUN mkdir -p /code
 RUN apk add --update curl nodejs
 
+WORKDIR /code
 COPY . /code
 ENV HOME /tmp
 EXPOSE 80 443
