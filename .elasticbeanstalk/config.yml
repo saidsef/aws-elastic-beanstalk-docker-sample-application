@@ -1,0 +1,6 @@
+packages:
+  yum:
+    nginx: []
+
+commands:
+  ignoreErrors: true
