@@ -5,13 +5,25 @@
       "name": "node-sample-web-application-v4",
       "image": "saidsef/node-webserver:dev",
       "essential": true,
-      "memory": 128
+      "memory": 128,
+      "portMappings": [
+         {
+            "hostPort": 80,
+            "containerPort": 80
+         }
+      ]
     },
     {
       "name": "node-sample-web-application-v5",
       "image": "saidsef/node-webserver:dev",
       "essential": true,
-      "memory": 128
+      "memory": 128,
+      "portMappings": [
+         {
+            "hostPort": 81,
+            "containerPort": 80
+         }
+      ]
     }
   ]
 }
