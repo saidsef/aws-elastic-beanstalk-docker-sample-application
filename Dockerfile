@@ -1,12 +1,21 @@
 FROM alpine:latest
 
 WORKDIR /code
+ENV HOME /tmp
 
 RUN apk add --update curl nodejs
-RUN rm -rfv /var/cache/apk/*
 
 COPY . /code
-
+ENV HOME /tmp
 EXPOSE 80 443
 
-CMD ["/usr/bin/node","/code/index.js"]
+RUN \
+    npm -v && \
+    export NPM_CONFIG_FETCH_RETRIES=10 && \
+    export NPM_CONFIG_LOGLEVEL=warn && \
+    npm run install
+
+RUN rm -rfv /var/cache/apk/*
+RUN npm cache clean
+
+CMD ["node", "/code/index.js"]

@@ -4,6 +4,8 @@
   "description": "test web application",
   "main": "index.js",
   "scripts": {
+    "install": "npm install",
+    "server": "npm run install && npm run start",
     "test": "echo \"Debug: no test specified\" && exit 0",
     "start": "node index.js"
   },
