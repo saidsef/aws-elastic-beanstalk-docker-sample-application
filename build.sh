@@ -19,7 +19,7 @@ cleanup() {
 
 delete() {
   echo "Remove dorment images"
-  if [ -x "$(docker images -a -q)"]; then
+  if [ -x "$(docker images -a -q)" ]; then
     docker rmi -f $(docker images -a -q)
   else
     echo "There is no dorment images"
