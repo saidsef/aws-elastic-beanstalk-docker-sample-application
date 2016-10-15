@@ -9,7 +9,7 @@ info() {
 
 cleanup() {
   echo "Remove dorment containers"
-  if [ -x "$(docker ps -a -q)" ]; then
+  if [ -x "$(docker ps -a -q | head -n 1)" ]; then
     docker stop $(docker ps -a -q)
     docker rm -f $(docker ps -a -q)
   else
@@ -19,7 +19,7 @@ cleanup() {
 
 delete() {
   echo "Remove dorment images"
-  if [ -x "$(docker images -a -q)" ]; then
+  if [ -x "$(docker images -a -q | head -n 1)" ]; then
     docker rmi -f $(docker images -a -q)
   else
     echo "There is no dorment images"
