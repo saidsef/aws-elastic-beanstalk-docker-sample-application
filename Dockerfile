@@ -19,6 +19,7 @@ RUN \
     export NPM_CONFIG_LOGLEVEL=warn && \
     npm run install
 
+RUN rm -rfv .git/ .gitignore
 RUN rm -rfv /var/cache/apk/*
 RUN npm cache clean
 
