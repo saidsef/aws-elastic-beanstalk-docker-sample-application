@@ -6,6 +6,6 @@ node("spot") {
     checkout scm
   }
   stage("Build") {
-    sh "./build.sh"
+    sh "./build.sh ${env.BUILD_ID}"
   }
 }

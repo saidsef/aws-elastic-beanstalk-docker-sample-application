@@ -28,12 +28,12 @@ delete() {
 
 build() {
   echo "Building image"
-  docker build -t saidsef/node-webserver:dev .
+  docker build -t saidsef/node-webserver:build-$1 .
 }
 
 push() {
   echo "Pushing image to docker hub"
-  docker push saidsef/node-webserver:dev
+  docker push saidsef/node-webserver:build-$1
 }
 
 main() {
