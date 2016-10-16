@@ -2,6 +2,9 @@ FROM alpine:latest
 
 MAINTAINER Said Sef <saidsef@gmail.com>
 
+LABEL version="1.0"
+LABEL description="Sample NodeJS web server"
+
 WORKDIR /code
 ENV HOME /tmp
 
