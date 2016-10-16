@@ -1,5 +1,5 @@
 # ignored items
-
 .git
 .gitignore
+build.sh
 README.md
