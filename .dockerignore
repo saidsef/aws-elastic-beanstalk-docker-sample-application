@@ -1,5 +1,10 @@
 # ignored items
 .git
 .gitignore
+.kitchen.docker.yml
 build.sh
+Dockerfile
+Dockerrun.aws.json
+Jenkinsfile
+LICENSE.md
 README.md
