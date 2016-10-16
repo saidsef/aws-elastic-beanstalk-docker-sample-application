@@ -1,5 +1,7 @@
 #!/bin/sh
 
+BUILD_ID=$1
+
 info() {
   echo """
     This is a test application for AWS Elastic Beanstalk Multi Container,
@@ -9,7 +11,7 @@ info() {
 
 cleanup() {
   echo "Remove dorment containers"
-  if [ -x "$(docker ps -a -q | head -n 1)" ]; then
+  if [ ! -z "$(docker ps -a -q | head -n 1)" ]; then
     docker stop $(docker ps -a -q)
     docker rm -f $(docker ps -a -q)
   else
@@ -19,7 +21,7 @@ cleanup() {
 
 delete() {
   echo "Remove dorment images"
-  if [ -x "$(docker images -a -q | head -n 1)" ]; then
+  if [ ! -z "$(docker images -a -q | head -n 1)" ]; then
     docker rmi -f $(docker images -a -q)
   else
     echo "There is no dorment images"
@@ -28,12 +30,12 @@ delete() {
 
 build() {
   echo "Building image"
-  docker build -t saidsef/node-webserver:build-$1 .
+  docker build -t saidsef/node-webserver:build-${BUILD_ID} .
 }
 
 push() {
   echo "Pushing image to docker hub"
-  docker push saidsef/node-webserver:build-$1
+  docker push saidsef/node-webserver:build-${BUILD_ID}
 }
 
 main() {
