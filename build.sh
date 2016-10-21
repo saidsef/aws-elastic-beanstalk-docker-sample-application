@@ -36,6 +36,7 @@ build() {
 push() {
   echo "Pushing image to docker hub"
   docker push saidsef/node-webserver:build-${BUILD_ID}
+  echo $?
 }
 
 main() {
