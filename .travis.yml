@@ -8,6 +8,8 @@ python:
 services:
   - docker
 
+cache: ccache
+
 install: true
 
 before_script:
@@ -16,3 +18,6 @@ before_script:
 
 script:
   - ./build.sh $TRAVIS_BUILD_NUMBER
+
+notifications:
+  email: true

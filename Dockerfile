@@ -6,6 +6,7 @@ LABEL version="1.0"
 LABEL description="Sample NodeJS web server"
 
 WORKDIR /code
+ENV LC_ALL="C.UTF-8" LANG="C.UTF-8"
 ENV HOME /tmp
 
 RUN mkdir -p /code
