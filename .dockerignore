@@ -1,7 +1,9 @@
 # ignored items
+**/.gitkeep
 .git
 .gitignore
 .kitchen.docker.yml
+.travis.yml
 build.sh
 Dockerfile
 Dockerrun.aws.json
