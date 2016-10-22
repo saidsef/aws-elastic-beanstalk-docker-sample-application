@@ -30,7 +30,7 @@ delete() {
 
 build() {
   echo "Building image"
-  docker build -t saidsef/node-webserver:build-${BUILD_ID} .
+  docker build --build-arg "BUILD_ID=${BUILD_ID}" -t saidsef/node-webserver:build-${BUILD_ID} .
 }
 
 push() {

@@ -15,13 +15,16 @@ RUN apk add --update curl nodejs
 WORKDIR /code
 COPY . /code
 ENV HOME /tmp
-EXPOSE 80 443
+EXPOSE 80
 
 RUN \
     npm -v && \
     export NPM_CONFIG_FETCH_RETRIES=10 && \
     export NPM_CONFIG_LOGLEVEL=warn && \
     npm run install
+
+ARG BUILD_ID=""
+RUN echo ${BUILD_ID} > build_id.txt
 
 RUN rm -rfv /var/cache/apk/*
 RUN npm cache clean
