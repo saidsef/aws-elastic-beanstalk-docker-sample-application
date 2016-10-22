@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "node-sample-web-application-c1",
-      "image": "saidsef/node-webserver:dev",
+      "image": "saidsef/node-webserver:latest",
       "essential": true,
       "memory": 128,
       "portMappings": [
@@ -15,7 +15,7 @@
     },
     {
       "name": "node-sample-web-application-c2",
-      "image": "saidsef/node-webserver:dev",
+      "image": "saidsef/node-webserver:latest",
       "essential": true,
       "memory": 128,
       "portMappings": [
@@ -27,7 +27,7 @@
     },
     {
       "name": "node-sample-web-application-c3",
-      "image": "saidsef/node-webserver:dev",
+      "image": "saidsef/node-webserver:latest",
       "essential": true,
       "memory": 128,
       "portMappings": [
@@ -39,7 +39,7 @@
     },
     {
       "name": "node-sample-web-application-c4",
-      "image": "saidsef/node-webserver:dev",
+      "image": "saidsef/node-webserver:latest",
       "essential": true,
       "memory": 128,
       "portMappings": [
