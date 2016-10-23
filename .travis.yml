@@ -21,6 +21,8 @@ script:
 
 notifications:
   email: true
+  on_success: always
+  on_failure: change
 
 after_success:
   - echo "All done!"
