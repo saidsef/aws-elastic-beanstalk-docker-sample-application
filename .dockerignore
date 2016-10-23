@@ -4,8 +4,9 @@
 .gitignore
 .kitchen.docker.yml
 .travis.yml
+*.md
 build.sh
 Dockerfile
 Dockerrun.aws.json
 Jenkinsfile
-*.md
+node_modules/*
