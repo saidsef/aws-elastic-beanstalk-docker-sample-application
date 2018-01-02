@@ -1,14 +1,15 @@
 'use strict';
-var express = require('express');
-var fs = require("fs");
-var app = express();
 
-var port = process.env.PORT || 80;
-var randomNumber = parseFloat((Math.random() * 100)).toFixed(2);
+const express = require('express');
+const fs = require("fs");
+
+const app = express();
+const PORT = process.env.PORT || 80;
 
 app.get("*", function(req, res, next) {
-  var buildID = fs.readFileSync("build_id.txt", "utf-8").trim();
-  res.json({ "message": "Hello World!", "random number": parseInt(String(randomNumber),10), "build": buildID });
+  let randomNumber = parseInt(String(parseFloat((Math.random() * 100)).toFixed(2)),10);
+  let buildID = fs.readFileSync("build_id.txt", "utf-8").trim();
+  res.json({ "message": "Hello World!", "random number": randomNumber, "build": buildID });
 });
 
-app.listen(port);
+app.listen(PORT);
