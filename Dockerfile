@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:10-alpine
 MAINTAINER Said Sef <saidsef@gmail.com> (saidsef.co.uk/)
 
 ARG PORT=""
