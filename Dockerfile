@@ -1,8 +1,8 @@
 FROM node:alpine
-MAINTAINER Said Sef <saidsef@gmail.com>
+MAINTAINER Said Sef <saidsef@gmail.com> (saidsef.co.uk/)
 
 ARG PORT=""
-LABEL version="1.0"
+LABEL version="2.0"
 LABEL description="Sample NodeJS web server"
 
 ARG BUILD_ID=""
