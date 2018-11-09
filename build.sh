@@ -5,7 +5,7 @@ BUILD_ID=$1
 info() {
   echo """
     This is a test application for AWS Elastic Beanstalk Multi Container,
-    a simple 'Hello Worl' NodeJS application
+    a simple 'Hello World' NodeJS application
   """
 }
 
