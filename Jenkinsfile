@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-node("spot") {
+node {
   properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5')), disableConcurrentBuilds(), pipelineTriggers([[$class: 'GitHubPushTrigger']])])
   stage("Checkout") {
     checkout scm
