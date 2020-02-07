@@ -1,4 +1,5 @@
 # ignored items
+/charts
 **/.gitkeep
 .git
 .gitignore
