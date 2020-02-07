@@ -1,8 +1,11 @@
 {
   "name": "web-server",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "test web application",
   "main": "index.js",
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
     "install": "npm install",
     "server": "npm run install && npm run start",
@@ -15,9 +18,13 @@
     "web",
     "application"
   ],
+  "repository": "git+https://github.com/saidsef/aws-elastic-beanstalk-docker-sample-application.git",
+  "bugs": {
+    "url": "https://github.com/saidsef/aws-elastic-beanstalk-docker-sample-application/issues"
+  },
   "author": "Said Sef <saidsef@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": ">= 4.5"
+    "express": "^4.17.1"
   }
 }

@@ -1,29 +1,22 @@
+dist: xenial
 sudo: required
-
-services:
-  - docker
-
-laguage: python
-
-python:
-  - "2.6"
-  - "2.7"
-  - "3.4"
-
-install: true
-
+before_install:
+  - curl -fsSL https://get.docker.com | sh
+  - echo '{"experimental":"enabled"}' | sudo tee /etc/docker/daemon.json
+  - mkdir -p $HOME/.docker
+  - echo '{"experimental":"enabled"}' | sudo tee $HOME/.docker/config.json
+  - sudo service docker start
+install:
+  - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+  - docker buildx create --name xbuilder --use
 before_script:
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-  - sudo cat /etc/default/docker
-
+  - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
 script:
   - docker version
   - ./build.sh $TRAVIS_BUILD_NUMBER
-
 notifications:
   email: true
   on_success: always
   on_failure: change
-
 after_success:
   - echo "All done!"

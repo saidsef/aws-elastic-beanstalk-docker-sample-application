@@ -1,5 +1,6 @@
-FROM node:10-alpine
-MAINTAINER Said Sef <saidsef@gmail.com> (saidsef.co.uk/)
+FROM node:13-alpine
+
+LABEL maintainer="Said Sef <saidsef@gmail.com> (saidsef.co.uk/)"
 
 ARG PORT=""
 LABEL version="2.0"
@@ -24,5 +25,8 @@ RUN apk add --update curl nodejs && \
     echo ${BUILD_ID} > build_id.txt
 
 EXPOSE ${PORT}
+
+# health check endpoint
+HEALTHCHECK --interval=30s --timeout=10s CMD curl --fail 'http://localhost:${PORT}/' || exit 1
 
 CMD ["node", "/code/index.js"]
