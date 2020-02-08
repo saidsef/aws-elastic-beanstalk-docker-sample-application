@@ -1,0 +1,3 @@
+[submodule "vendor/node-webserver"]
+	path = vendor/node-webserver
+	url = https://github.com/saidsef/node-webserver.git

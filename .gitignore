@@ -1,2 +1,3 @@
 # ignored files/directories
 node_modules/
+vendor/
