@@ -9,7 +9,7 @@
       "portMappings": [
          {
             "hostPort": 81,
-            "containerPort": 80
+            "containerPort": 8080
          }
       ]
     },
@@ -21,7 +21,7 @@
       "portMappings": [
          {
             "hostPort": 82,
-            "containerPort": 80
+            "containerPort": 8080
          }
       ]
     },
@@ -33,7 +33,7 @@
       "portMappings": [
          {
             "hostPort": 83,
-            "containerPort": 80
+            "containerPort": 8080
          }
       ]
     },
@@ -45,7 +45,7 @@
       "portMappings": [
          {
             "hostPort": 84,
-            "containerPort": 80
+            "containerPort": 8080
          }
       ]
     }
