@@ -36,6 +36,11 @@ delete() {
 #   docker tag saidsef/node-webserver saidsef/node-webserver:build-${BUILD_ID}
 # }
 
+gitsubmodule() {
+  echo "Updating git submodule"
+  git submodule update --remote
+}
+
 buildx() {
   echo "Build multi ARCH"
   docker buildx create --use
@@ -53,6 +58,7 @@ buildx() {
 main() {
   info
   cleanup
+  gitsubmodule
   buildx
 }
 
